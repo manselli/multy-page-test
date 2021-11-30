@@ -5,6 +5,7 @@ import About from './components/pages/About';
 import Blog from './components/pages/Blog';
 import Login from './components/pages/auth/Login';
 import Signup from './components/pages/auth/Signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
