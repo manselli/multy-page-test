@@ -13,9 +13,20 @@ import Signup from './components/pages/auth/Signup';
 
 
 ReactDOM.render(
-    <Router  basename={process.env.PUBLIC_URL}>  
-      <App />
-    </Router>,
+  <Router>
+    <Navigation />
+    <Routes>
+      <Route path="/multy-page-test/" element={<Home />} />
+      <Route path="/multy-page-test/about" element={<About />} />
+      <Route path="/multy-page-test/blog" element={<Blog />}>
+        </Route>
+      <Route path="/multy-page-test/login" element={<Login/>} />     
+      <Route path="/multy-page-test/signup" element={<Signup />} /> 
+      
+    </Routes>
+    
+  </Router>,
+  
   document.getElementById('root')
 );
 
