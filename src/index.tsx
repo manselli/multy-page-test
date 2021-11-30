@@ -3,16 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './components/Navigation';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Blog from './components/pages/Blog';
+import Login from './components/pages/auth/Login';
+import Signup from './components/pages/auth/Signup';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-    <App />
-    </Router>
-  </React.StrictMode>,
+    <Router>  
+       <Navigation />
+       <Routes>
+         <Route path="/multy-page-test/" element={<Home/>} />
+         <Route path="/multy-page-test/about" element={<About/>} />
+         <Route path="/multy-page-test/blog" element={<Blog/>} />
+         <Route path="/multy-page-test/login" element={<Login/>} />
+         <Route path="/multy-page-test/signup" element={<Signup/>} />
+        </Routes>
+    </Router>,
   document.getElementById('root')
 );
 
